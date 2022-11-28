@@ -27,7 +27,7 @@ import (
 
 // MonitoringParameters are the configurable fields of a Monitoring.
 type MonitoringParameters struct {
-	name string `json:"name"`
+	retantionInterval string `json:"retantionInterval"`
 }
 
 // MonitoringObservation are the observable fields of a Monitoring.

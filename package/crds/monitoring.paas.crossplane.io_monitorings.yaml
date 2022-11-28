@@ -65,10 +65,10 @@ spec:
                 description: MonitoringParameters are the configurable fields of a
                   Monitoring.
                 properties:
-                  configurableField:
+                  retantionInterval:
                     type: string
                 required:
-                - configurableField
+                - retantionInterval
                 type: object
               providerConfigRef:
                 default:
