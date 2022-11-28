@@ -1,9 +1,9 @@
 apiVersion: monitoring.paas.crossplane.io/v1alpha1
 kind: Monitoring
 metadata:
-  name: Monitorings
+  name: monitoringsss
 spec:
   forProvider:
-    configurableField: test
+    configurableField: "test"
   providerConfigRef:
     name: example
