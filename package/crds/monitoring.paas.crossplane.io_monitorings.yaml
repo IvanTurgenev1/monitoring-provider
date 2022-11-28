@@ -5,18 +5,18 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.10.0
   creationTimestamp: null
-  name: mytypes.sample.template.crossplane.io
+  name: monitorings.monitoring.paas.crossplane.io
 spec:
-  group: sample.template.crossplane.io
+  group: monitoring.paas.crossplane.io
   names:
     categories:
     - crossplane
     - managed
-    - template
-    kind: MyType
-    listKind: MyTypeList
-    plural: mytypes
-    singular: mytype
+    - paas
+    kind: Monitoring
+    listKind: MonitoringList
+    plural: monitorings
+    singular: monitoring
   scope: Cluster
   versions:
   - additionalPrinterColumns:
@@ -35,7 +35,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: A MyType is an example API type.
+        description: A Monitoring is an example API type.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -50,7 +50,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: A MyTypeSpec defines the desired state of a MyType.
+            description: A MonitoringSpec defines the desired state of a Monitoring.
             properties:
               deletionPolicy:
                 default: Delete
@@ -62,7 +62,8 @@ spec:
                 - Delete
                 type: string
               forProvider:
-                description: MyTypeParameters are the configurable fields of a MyType.
+                description: MonitoringParameters are the configurable fields of a
+                  Monitoring.
                 properties:
                   configurableField:
                     type: string
@@ -241,10 +242,11 @@ spec:
             - forProvider
             type: object
           status:
-            description: A MyTypeStatus represents the observed state of a MyType.
+            description: A MonitoringStatus represents the observed state of a Monitoring.
             properties:
               atProvider:
-                description: MyTypeObservation are the observable fields of a MyType.
+                description: MonitoringObservation are the observable fields of a
+                  Monitoring.
                 properties:
                   observableField:
                     type: string

@@ -1,0 +1,76 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: xmonitoringservices.saltpaas.x5.ru
+spec:
+  group: saltpaas.x5.ru
+  names:
+    kind: XMonitoringService
+    plural: xmonitoringservices
+  claimNames:
+    kind: MonitoringService
+    plural: monitoringservices
+  versions:
+    - name: v1alpha1
+      served: true
+      referenceable: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                parameters:
+                  type: object
+                  properties:
+                    victoriametrics:
+                      type: object
+                      properties:
+                        retantionInterval:
+                          type: string
+                        storageSize:
+                          type: string
+                   # grafana:
+                   #   type: object
+                   #   properties:
+                   #     zabbix-exporter:
+                   #       type: string
+                   # alers:
+                   #   type: object
+                   #   properties:
+                   #     email:
+                   #       type: array
+                   #       items:
+                   #         type: object
+                   #         properties:
+                   #           recievers:
+                   #             type: array
+                   #             groups:
+                   #               type: object
+                   #               propertis:
+                   #                 name:
+                   #                   type: string
+                   #                   rules:
+                   #                     type: array
+                   #                     items: 
+                   #                       type: object
+                   #                       properties:
+                   #                         alert:
+                   #                           type: string
+                   #                         expire:
+                   #                           type: string
+                   #                         for:
+                   #                           type: string
+                   #                         labels:
+                   #                           type: object
+                   #                           properties:
+                   #                             serverinity:
+                   #                               type: string
+                   #                         annotations:
+                   #                           type: object
+                   #                           properties:
+                   #                             summary:
+                   #                               type string
+
+

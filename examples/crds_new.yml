@@ -1,0 +1,60 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: monitoring-for-project
+spec:
+  group: monitoring.paas.crossplane.io
+  names:
+    kind: XMonitoringService
+    plural: xmonitoringservices
+  claimNames:
+    kind: MonitoringService
+    plural: monitoringservices
+  versions:
+    - name: v1alpha1
+      served: true
+      referenceable: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                parameters:
+                  type: object
+                  properties:
+                    projectId:
+                      type: string
+                    scrape_config:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          job_name:
+                            type: string
+                          scrape_interval:
+                            type: string
+                          metrics_path:
+                            type: string
+                          scheme:
+                            type: string
+                            basic_auth:
+                              type: object
+                              properties:
+                                username:
+                                  type: string
+                                password:
+                                  type: string
+                          static_configs:
+                            type: object
+                            properties:
+                              targets:
+                                type: array
+                              labels:
+                                type: object
+                                properties:
+                                  project:
+                                    type: string
+                                  env:
+                                    type: string

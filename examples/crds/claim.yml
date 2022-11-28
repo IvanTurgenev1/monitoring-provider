@@ -1,0 +1,15 @@
+apiVersion: saltpaas.x5.ru/v1alpha1
+kind: XMonitoringService
+metadata:
+  namespace: crossplane-system
+  name: version
+spec:
+  parameters:
+    victoriametrics:
+      retantionInterval: "1d"
+      storageSize: "10"
+  compositionRef:
+    name: monitoring
+  writeConnectionSecretToRef:
+    name: vmsecret
+    namespace: crossplane-system

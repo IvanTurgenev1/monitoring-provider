@@ -1,7 +1,7 @@
-apiVersion: sample.template.crossplane.io/v1alpha1
-kind: MyType
+apiVersion: monitoring.paas.crossplane.io/v1alpha1
+kind: Monitoring
 metadata:
-  name: example
+  name: Monitorings
 spec:
   forProvider:
     configurableField: test
